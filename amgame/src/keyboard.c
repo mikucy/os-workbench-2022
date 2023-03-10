@@ -6,6 +6,12 @@ static const char *key_names[] = {
   AM_KEYS(KEYNAME)
 };
 
+int readkey() {
+ AM_INPUT_KEYBRD_T event = { .keycode = AM_KEY_NONE }; 
+ ioe_read(AM_INPUT_KEYBRD, &event);
+ return event.keycode;
+}
+
 void print_key() {
   AM_INPUT_KEYBRD_T event = { .keycode = AM_KEY_NONE };
   ioe_read(AM_INPUT_KEYBRD, &event);
