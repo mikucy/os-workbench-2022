@@ -1,0 +1,1 @@
+void klib_tests();
